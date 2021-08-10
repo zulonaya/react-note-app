@@ -23,9 +23,16 @@ body {
   margin: 1em 1% 1em 0;
   min-width: 20%;
   min-height: 100px;
-  display: inline-flex;
+  display: inline-block;
+  position: relative;
 }
-
+.note-action-control {
+  display: block;
+  text-align: right;
+}
+.delete-btn {
+  color: maroon !important;
+}
 .footer {
   display: block;
   position: absolute;

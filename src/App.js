@@ -6,10 +6,18 @@ import Note from './components/Note'
 
 export const App = () => {
     const [notes, setNotes] = useState([])
- console.log(notes);
+    console.log(notes);
     function addNote(note){
         setNotes(preNotes => {
             return [...preNotes, note]
+        })
+
+    }
+    function deleteNote(id){
+        setNotes( prevNotes => {
+            return prevNotes.filter((note, index) =>{
+                return index !== id;
+            })
         })
 
     }
@@ -17,8 +25,8 @@ export const App = () => {
         <div>
             <Header />
             <FormArea addNote={addNote} />
-            {notes.map(note=>(
-                <Note key={note.title} title={note.title} content={note.content}/>
+            {notes.map((note, index)=>(
+                <Note deleteNote={deleteNote} id={index} title={note.title} content={note.content}/>
             ))}
             <Footer />
         </div>
