@@ -8,12 +8,14 @@ function Note({title, content, deleteNote, id}) {
     }
     return (
         <Paper className="note">
-            <div>
+            <div className="note-copies">
                 <h1>{title}</h1>
                 <p>{content}</p>  
             </div>
             <div className="note-action-control">
-                <Button onClick={clickHandler} className="delete-btn"><DeleteIcon /></Button>
+                <div className="action-btn">
+                    <Button onClick={clickHandler} className="delete-btn"><DeleteIcon /></Button>
+                </div>
             </div>
         </Paper>
     )

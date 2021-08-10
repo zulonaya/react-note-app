@@ -25,9 +25,11 @@ export const App = () => {
         <div>
             <Header />
             <FormArea addNote={addNote} />
-            {notes.map((note, index)=>(
-                <Note deleteNote={deleteNote} id={index} title={note.title} content={note.content}/>
-            ))}
+            <div className="notes-div">
+                {notes.map((note, index)=>(
+                    <Note deleteNote={deleteNote} id={index} title={note.title} content={note.content}/>
+                ))}
+            </div>
             <Footer />
         </div>
     )
